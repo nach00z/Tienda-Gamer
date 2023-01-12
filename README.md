@@ -3,13 +3,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Proyecto Ecommerce sobre tarjetas graficas de Amd y Nvidia. El mismo se inicia directamente en la tienda, donde podemos ver un catalogo de productos disponibles con un boton para acceder a los detalles del producto.
+Proyecto Ecommerce sobre tarjetas gráficas de Amd y Nvidia. El mismo se inicia directamente en la tienda, donde podemos ver un catálogo de productos disponibles con un boton para acceder a los detalles del producto. Tambien encontramos un sencillo Login - Logout para el usuario que esta navegando.
 
-En ese apartado se podra elegir la cantidad de productos a comprar segun el stock disponible y agregar al carrito. En el carrito se tendra la posiblidad de consultar mas productos, remover una tarjeta en particular que no se quiera o vaciar el carrito en su totalidad.
+En el apartado Detalles se podra elegir la cantidad de productos a comprar segun el stock disponible y agregar al carrito. En el carrito se tendrá la posiblidad de consultar más productos, remover una placa de video en particular o vaciar el carrito en su totalidad.
 
-Cuando el cliente se decida con la compra podra ver el total a pagar y debera ingresar sus datos para confirmar la orden; la cual automaticamente se haya ejecutado ira a la base de datos y devolvera instantaneamente el numero de compra del Producto (id de la orden)
+Cuando el cliente se decida con la compra podrá ver el total a pagar y deberá ingresar sus datos para confirmar la orden; la cual, al ejecurtase, irá automaticamente a la base de datos y devolvera instantáneamente el número de compra del Producto (id de la orden).
 
-Por otra parte tenemos una pagina con una breve historia de las marcas, desarrollada muy basicamente.
+Por otra parte tenemos una página con una breve historia de las marcas, desarrollada muy básicamente.
 
 ## Dependencias Utilizadas
 
