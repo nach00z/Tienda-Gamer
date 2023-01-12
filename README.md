@@ -1,4 +1,4 @@
-# Tienda Ecommerce Gamer - 
+# Tienda Ecommerce Gamer 
 # Proyecto Final del Curso Desarrollo Front-end React de Coderhouse
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
