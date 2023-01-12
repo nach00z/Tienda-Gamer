@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Tienda Ecommerce sobre Tarjetas Graficas de Nvidia y Amd
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
