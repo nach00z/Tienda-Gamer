@@ -1,47 +1,54 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import { getFirestore } from "firebase/firestore";
+import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom";
-import productList from './objetos.json';
+import { getProductById } from "./queries/products";
+import ItemCount from "./ItemCount"
+import { CartContext } from "../context/cartContext"
 import Card from 'react-bootstrap/Card';
+
 
 const Detail = () => {
 
-    const { id } = useParams()
-    console.log(id)
-
-    const [producto, setProductos] = useState([])
+const { id } = useParams();
+const [product, setProduct] = useState(null);
 
     useEffect(() => {
-         const data = obtenerDatos()
-        if (
-            id
-        ) {
-            const productoEncontrado = data.find((producto) =>
-                producto.id == id
-            )
-            console.log(productoEncontrado);
-            setProductos(productoEncontrado)
-        }
-        console.log(data)
+        const db = getFirestore();
+        getProductById(db, id)
+          .then((item) => {
+            setProduct(item)
+          })
 
-    }, [id])
+    }, [id]);
 
-    const obtenerDatos = () => {
+const { addItem } = useContext(CartContext);
+const [contador, setContador] = useState("-");
 
-        return productList
+const onAdd = (quantity) => {
+        setContador(quantity)
+        addItem(product, quantity)
     }
 
     return (
-        <div>
-            <h1>detalles de Productos</h1>
-            <Card.Img  variant="top" style={{height:'255px', width:'255px'}} src={producto.img} />
-            <h3>{producto.nombre}</h3>
-            <h5>{producto.precio}</h5>
-            <p>{producto.description}</p>
-            <p>{producto.stock}</p>
-        </div>
+      <body className="bodyTienda">
 
+        <div>
+          <Card className="text-center">
+            <Card.Body>
+              <Card.Title>{product?.title}</Card.Title>
+              <Card.Img variant="top" style={{ height: '500px', width: '600px' }} src={product?.image} />
+              <Card.Text>
+                {product?.description}
+              </Card.Text>
+              <ItemCount nombreProducto="Producto" stock={product?.stock} initial={1} onAdd={onAdd} />
+              <p>Cantidad: {contador}</p>
+            </Card.Body>
+            <Card.Footer className="text-muted">{"$"}{product?.price}</Card.Footer>
+          </Card>
+
+        </div>
+      </body>
     )
 }
 
-export default Detail
+export default Detail;
