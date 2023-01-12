@@ -13,9 +13,11 @@ Por otra parte tenemos una pagina con una breve historia de las marcas, desarrol
 
 ## Dependencias Utilizadas
 
-Bootstrap React: Card - Cart - Button - Nav - Navbar.
-Firebase.
-React-router-dom.
+-Bootstrap React: Card - Cart - Button - Nav - Navbar
+
+-Firebase
+
+-React-router-dom
 
 ## Available Scripts
 
